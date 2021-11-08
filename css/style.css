@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Exo2-Light;
+    src: url("../assets/fonts/Exo2-Light.ttf") format("truetype");
+}
+
+* {
+    font-family: Exo2-Light;
+}
+
+body {
+    background: #202c3b;
+    display: flex;
+}
+
+.content {
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    /*   overflow: hidden; */
+}
+
+.title {
+    text-align: center;
+    color: #fff;
+    margin-top: 80px;
+}

@@ -1,0 +1,72 @@
+#rex {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url(../assets/images/t-rex.png);
+    bottom: 5px;
+    left: 40px;
+}
+
+.cacto {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url(../assets/images/cacti.png);
+    bottom: 0px;
+}
+
+@keyframes slideright {
+    from {
+        background-position: 70000%;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+@-webkit-keyframes slideright {
+    from {
+        background-position: 70000%;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+#cenario {
+    margin: auto;
+    position: relative;
+    /*  */
+    background-image: url('../assets/images/background_mario.jpg');
+    background-repeat: repeat-x;
+    animation: slideright 100s infinite linear;
+    -webkit-animation: slideright 100s infinite linear;
+    width: 600px;
+    height: 200px;
+}
+
+.salto {
+    animation: salto 500ms linear;
+}
+
+@keyframes salto {
+    0% {
+        top: 100px;
+    }
+    25% {
+        top: 10px;
+    }
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: 140px;
+    }
+}
+
+#placar {
+    width: 90%;
+    position: absolute;
+    text-align: end;
+    margin-top: 40px;
+}
