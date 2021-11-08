@@ -39,14 +39,17 @@
     /*  */
     background-image: url('../assets/images/background_mario.jpg');
     background-repeat: repeat-x;
-    animation: slideright 100s infinite linear;
-    -webkit-animation: slideright 100s infinite linear;
     width: 600px;
     height: 200px;
 }
 
 .salto {
     animation: salto 500ms linear;
+}
+
+.moveCenario {
+    animation: slideright 100s infinite linear;
+    -webkit-animation: slideright 100s infinite linear;
 }
 
 @keyframes salto {
