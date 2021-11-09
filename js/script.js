@@ -42,7 +42,7 @@ function geraCactos() {
             posicaoCacto = posicaoCacto - 4;
             cacto.style.left = posicaoCacto + 'px'
             if (posicaoCacto < 0) {
-                cacto.classList.remove('cacto')
+                grid.removeChild(cacto)
             }
             if ((saltou == false && posicaoCacto > 20 && posicaoCacto < 100) ||
                 (saltou == true && rexTop >= 100 && posicaoCacto > 20 && posicaoCacto < 60)) {
