@@ -2,7 +2,7 @@
     position: absolute;
     width: 60px;
     height: 60px;
-    background-image: url(../assets/images/t-rex.png);
+    background-image: url(../assets/images/rex-2021.png);
     bottom: 5px;
     left: 40px;
 }
@@ -11,13 +11,13 @@
     position: absolute;
     width: 60px;
     height: 60px;
-    background-image: url(../assets/images/cacti.png);
-    bottom: 0px;
+    background-image: url(../assets/images/cactus-2021.png);
+    bottom: 5px;
 }
 
 @keyframes slideright {
     from {
-        background-position: 70000%;
+        background-position: 10000%;
     }
     to {
         background-position: 0%;
@@ -26,7 +26,7 @@
 
 @-webkit-keyframes slideright {
     from {
-        background-position: 70000%;
+        background-position: 10000%;
     }
     to {
         background-position: 0%;
@@ -39,7 +39,7 @@
     /*  */
     background-image: url('../assets/images/background_mario.jpg');
     background-repeat: repeat-x;
-    width: 600px;
+    width: 800px;
     height: 200px;
 }
 

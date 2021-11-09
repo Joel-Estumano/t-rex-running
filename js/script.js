@@ -5,9 +5,7 @@ let saltou = false
 let morreu = false
 let pontos = 0
 let start = false
-
-/*  */
-const grid = document.querySelector('.grid')
+let grid = document.getElementById('grid')
 
 time()
 
@@ -38,10 +36,14 @@ function geraCactos() {
     /*  */
     let timerId = setInterval(function() {
 
-
         let rexTop = parseInt(window.getComputedStyle(tRex).getPropertyValue("top"));
 
         if (!morreu) {
+            posicaoCacto = posicaoCacto - 4;
+            cacto.style.left = posicaoCacto + 'px'
+            if (posicaoCacto < 0) {
+                cacto.classList.remove('cacto')
+            }
             if ((saltou == false && posicaoCacto > 20 && posicaoCacto < 100) ||
                 (saltou == true && rexTop >= 100 && posicaoCacto > 20 && posicaoCacto < 60)) {
                 clearInterval(timerId)
@@ -53,16 +55,10 @@ function geraCactos() {
                 document.getElementById("placar").innerHTML = 'Game over!' + ' Score: ' + pontos
                 document.getElementById("action").innerHTML = 'Recarregue a página para tentar novamente'
             }
-            posicaoCacto = posicaoCacto - 10;
-            cacto.style.left = posicaoCacto + 'px'
-            if (posicaoCacto < 0) {
-                cacto.classList.remove('cacto')
-            }
+
         }
 
-
-
-    }, 20)
+    }, 8)
     if (!morreu) { setTimeout(geraCactos, tempoAleatorio) }
 }
 
@@ -76,17 +72,13 @@ document.addEventListener("keydown", function(event) {
     saltar();
 });
 
-
-
 function up() {
     document.getElementById('up').play()
 }
 
-
 function death() {
     document.getElementById('death').play()
 }
-
 
 function time() {
     setInterval(function() {
