@@ -19,7 +19,7 @@ body {
     right: 0;
     bottom: 0;
     position: absolute;
-    /*   overflow: hidden; */
+    overflow: hidden;
 }
 
 .title {
