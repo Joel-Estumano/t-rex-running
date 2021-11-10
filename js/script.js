@@ -25,7 +25,6 @@ function saltar() {
 function geraCactos() {
     let tempoAleatorio = Math.random() * 6000
 
-    /* recupero o cenario, planto o cacto */
     let posicaoCacto = parseInt(window.getComputedStyle(cenario).getPropertyValue('width')) - 60;
     let cacto = document.createElement('div')
     if (!morreu) {
