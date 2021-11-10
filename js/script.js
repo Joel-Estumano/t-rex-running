@@ -1,13 +1,12 @@
-document.getElementById("action").innerHTML = 'Pressione espaço para iniciar'
 let cenario = document.getElementById('cenario')
+let grid = document.getElementById('grid')
 let tRex = document.getElementById("rex")
 let saltou = false
 let morreu = false
 let pontos = 0
 let start = false
-let grid = document.getElementById('grid')
 
-time()
+load()
 
 function saltar() {
     if (!morreu) {
@@ -29,11 +28,13 @@ function geraCactos() {
     /* recupero o cenario, planto o cacto */
     let posicaoCacto = parseInt(window.getComputedStyle(cenario).getPropertyValue('width')) - 60;
     let cacto = document.createElement('div')
-    if (!morreu) { cacto.classList.add('cacto') }
-    grid.appendChild(cacto)
-    cacto.style.left = posicaoCacto + 'px'
+    if (!morreu) {
+        cacto.classList.add('cacto')
+        grid.appendChild(cacto)
+        cacto.style.left = posicaoCacto + 'px'
+    }
 
-    /*  */
+
     let timerId = setInterval(function() {
 
         let rexTop = parseInt(window.getComputedStyle(tRex).getPropertyValue("top"));
@@ -42,7 +43,8 @@ function geraCactos() {
             posicaoCacto = posicaoCacto - 4;
             cacto.style.left = posicaoCacto + 'px'
             if (posicaoCacto < 0) {
-                cacto.classList.remove('cacto')
+                grid.removeChild(cacto)
+                clearInterval(timerId)
             }
             if ((saltou == false && posicaoCacto > 20 && posicaoCacto < 100) ||
                 (saltou == true && rexTop >= 100 && posicaoCacto > 20 && posicaoCacto < 60)) {
@@ -65,8 +67,8 @@ function geraCactos() {
 document.addEventListener("keydown", function(event) {
     if (start == false) {
         start = true;
-        cenario.classList.add("moveCenario")
         document.getElementById("action").innerHTML = 'Running...'
+        cenario.classList.add("moveCenario")
         geraCactos()
     }
     saltar();
@@ -80,7 +82,8 @@ function death() {
     document.getElementById('death').play()
 }
 
-function time() {
+function load() {
+    document.getElementById("action").innerHTML = 'Pressione espaço para iniciar'
     setInterval(function() {
         if (!morreu && start) {
             document.getElementById("placar").innerHTML = (pontos = pontos + 1);
